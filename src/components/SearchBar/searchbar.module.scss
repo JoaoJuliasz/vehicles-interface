@@ -1,0 +1,14 @@
+.container {
+    background: rgb(42, 49, 56);
+    width: 40%;
+
+    .input {
+        width: -webkit-fill-available;
+        padding: 25px;
+        outline: none;
+        border: none;
+        background: none;
+        border-left: none;
+        color: #fff;
+    }
+}

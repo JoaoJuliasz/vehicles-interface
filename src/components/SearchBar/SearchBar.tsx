@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { VehiclesContext } from '../../context/Context';
 import GetFilteredVehicles from './Executors/GetFilteredVehicles';
 
+import styles from './searchbar.module.scss'
+
 const SearchBar = () => {
 
     const [searchValue, setSearchValue] = useState('')
@@ -32,8 +34,8 @@ const SearchBar = () => {
     }
 
     return (
-        <div>
-            <input type="text"
+        <div className={styles.container} >
+            <input className={styles.input} type="text"
                 onChange={handleChange}
                 onKeyDown={onEnterPressed}
                 placeholder="SEARCH for a vehicle" />

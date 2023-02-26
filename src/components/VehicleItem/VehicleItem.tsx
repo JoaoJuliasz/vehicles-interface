@@ -1,5 +1,7 @@
 import { Vehicle } from '../../types/types';
 
+import style from './vehicle.module.scss'
+
 type Props = {
     vehicle: Vehicle
     changeDetailedVehicle: (vehicleId: string) => void
@@ -13,20 +15,16 @@ const VehicleItem = ({ vehicle, changeDetailedVehicle }: Props) => {
     }
 
     return (
-        <div style={{
-            margin: '7px 0', display: 'flex', maxWidth: '350px',
-            justifyContent: 'space-between', background: '#fff',
-            padding: '5px', cursor: 'pointer'
-        }}
+        <div className={style.container}
             onClick={getItemDetails}
         >
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span>{vehicle.marca}</span>
-                <span>{vehicle.veiculo}</span>
-                <span>{vehicle.ano}</span>
+            <div className={style.vehicleValues}>
+                <span className={style.brand}>{vehicle.marca}</span>
+                <span className={style.name}>{vehicle.veiculo}</span>
+                <span className={style.year}>{vehicle.ano}</span>
             </div>
             <div>
-                tag
+                <span>&#x1f3f7;</span>
             </div>
         </div>
     );

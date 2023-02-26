@@ -1,0 +1,36 @@
+.container {
+    margin: 7px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(255, 255, 255);
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:hover,
+    &.selected {
+        background: #f1f2f0;
+    }
+
+    .vehicleValues {
+        display: flex;
+        flex-direction: column;
+        .brand {
+            color: #2f2e2e;
+            font-size: 1em;
+            margin: 2px 0;
+        }
+
+        .name {
+            color: #1d7555;
+            font-size: 1em;
+            margin: 2px 0;
+        }
+
+        .year {
+            color: #a0a0a0;
+            font-size: 1em;
+            margin: 2px 0;
+        }
+    }
+}

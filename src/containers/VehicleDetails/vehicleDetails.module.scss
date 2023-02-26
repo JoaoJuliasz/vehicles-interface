@@ -1,0 +1,83 @@
+.container {
+    width: 50%;
+    margin-top: 20px;
+
+    .title {
+        color: #676767;
+        margin: 0 0 10px;
+    }
+
+    .infos {
+        min-height: 300px;
+        max-height: 500px;
+        background: #f1f2f0;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding: 10px;
+
+        .name {
+            color: #1d7555;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .factoryInfo {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-size: 18px;
+                    color: #2f2e2e;
+                }
+                span {
+                    font-size: 15px;
+                    color: #a0a0a0;
+                }
+            }
+        }
+
+        .description {
+            color: #6f6969;
+        }
+
+        .edit {
+            border-top: 1px solid #babbb9;
+            padding-top: 10px;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            .btn {
+                background: #45535a;
+                color: #fff;
+                cursor: pointer;
+                border: #45535a;
+                width: 130px;
+                font-size: 20px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                padding: 0 15px;
+
+                span {
+                    margin-left: 20px;
+                }
+
+                &:hover {
+                    background: #4c5961;
+                }
+            }
+
+            .tag {
+                font-size: 25px;
+            }
+        }
+    }
+}

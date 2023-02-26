@@ -1,7 +1,9 @@
-import React, { memo, useContext, useEffect } from 'react';
+import { memo, useContext, useEffect } from 'react';
 import VehicleItem from '../../components/VehicleItem/VehicleItem';
 import { VehiclesContext } from '../../context/Context';
 import GetVehicles from './Executors/GetVehicles';
+
+import style from './vehiclesList.module.scss'
 
 type Props = {
     changeDetailedVehicle: (vehicleId: string) => void
@@ -21,10 +23,10 @@ const VehiclesList = ({ changeDetailedVehicle }: Props) => {
     }, [])
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', margin: '20px', width: '50%' }}>
-            <h4>Vehicles List</h4>
+        <div className={style.container}>
+            <h4 className={style.title}>Vehicles List</h4>
             {context?.vehicles.map(vehicle =>
-                <VehicleItem key={vehicle._id} vehicle={vehicle} changeDetailedVehicle={changeDetailedVehicle}/>
+                <VehicleItem key={vehicle._id} vehicle={vehicle} changeDetailedVehicle={changeDetailedVehicle} />
             )}
         </div>
     );

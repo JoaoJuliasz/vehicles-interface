@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { VehiclesProvider } from '../../context/Context';
 import { Vehicle } from '../../types/types';
+import CreateVehicle from '../CreateVehicle/CreateVehicle';
 import Navbar from '../Navbar/Navbar';
 import VehiclesList from '../VehiclesList/VehiclesList';
 
@@ -12,7 +13,10 @@ const Home = () => {
         <VehiclesProvider value={{ vehicles, setVehicles }}>
             <div>
                 <Navbar />
-                <VehiclesList />
+                <div style={{padding: '2em'}}>
+                    <CreateVehicle />
+                    <VehiclesList />
+                </div>
             </div>
         </VehiclesProvider>
     );

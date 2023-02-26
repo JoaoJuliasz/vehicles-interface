@@ -3,7 +3,7 @@ import { VehiclesProvider } from '../../context/Context';
 import { Vehicle } from '../../types/types';
 import CreateVehicle from '../CreateVehicle/CreateVehicle';
 import Navbar from '../Navbar/Navbar';
-import VehiclesList from '../VehiclesList/VehiclesList';
+import VehiclesContainer from '../VehiclesContainer/VehiclesContainer';
 
 const Home = () => {
 
@@ -13,9 +13,9 @@ const Home = () => {
         <VehiclesProvider value={{ vehicles, setVehicles }}>
             <div>
                 <Navbar />
-                <div style={{padding: '2em'}}>
+                <div style={{ padding: '2em', maxWidth: '1000px', margin: '0 auto' }}>
                     <CreateVehicle />
-                    <VehiclesList />
+                    <VehiclesContainer />
                 </div>
             </div>
         </VehiclesProvider>

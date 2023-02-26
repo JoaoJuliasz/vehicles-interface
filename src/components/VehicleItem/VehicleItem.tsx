@@ -1,21 +1,15 @@
-import React from 'react';
 import { Vehicle } from '../../types/types';
-import GetVehicleDetails from './Executors/GetVehicleDetails';
 
 type Props = {
     vehicle: Vehicle
+    changeDetailedVehicle: (vehicleId: string) => void
 }
 
-const VehicleItem = ({ vehicle }: Props) => {
+const VehicleItem = ({ vehicle, changeDetailedVehicle }: Props) => {
 
 
-    const getItemDetails = async () => {
-        try {
-            const response = await new GetVehicleDetails(vehicle?._id || "").execute()
-            console.warn(response.data)
-        } catch (error) {
-            console.error(error)
-        }
+    const getItemDetails = () => {
+        changeDetailedVehicle(vehicle._id!)
     }
 
     return (
@@ -24,7 +18,7 @@ const VehicleItem = ({ vehicle }: Props) => {
             justifyContent: 'space-between', background: '#fff',
             padding: '5px', cursor: 'pointer'
         }}
-        onClick={getItemDetails}
+            onClick={getItemDetails}
         >
             <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <span>{vehicle.marca}</span>

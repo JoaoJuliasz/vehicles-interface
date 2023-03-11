@@ -1,18 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useVehiclesContext } from '../../hooks/useVehiclesContext';
 import { Vehicle } from '../../types/types';
 import GetVehicleDetails from './Executors/GetVehicleDetails';
 
 import style from './vehicleDetails.module.scss'
 
-type Props = {
-    vehicleId: string
-}
-
-const VehicleDetails = ({ vehicleId }: Props) => {
-
+const VehicleDetails = () => {
     const [vehicleDetails, setVehicleDetails] = useState({} as Vehicle)
     const [loading, setLoading] = useState<boolean>(false)
 
+    const { detailedVehicleId: vehicleId } = useVehiclesContext()
 
     const getVehicleDetails = async () => {
         setLoading(true)

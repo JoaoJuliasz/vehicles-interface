@@ -1,3 +1,4 @@
+import { useVehiclesContext } from '../../hooks/useVehiclesContext';
 import { Vehicle } from '../../types/types';
 
 import style from './vehicle.module.scss'
@@ -9,13 +10,14 @@ type Props = {
 
 const VehicleItem = ({ vehicle, changeDetailedVehicle }: Props) => {
 
+    const { detailedVehicleId } = useVehiclesContext()
 
     const getItemDetails = () => {
         changeDetailedVehicle(vehicle._id!)
     }
 
     return (
-        <div className={style.container}
+        <div className={`${style.container} ${vehicle._id! === detailedVehicleId ? style.selected : ''}`}
             onClick={getItemDetails}
         >
             <div className={style.vehicleValues}>

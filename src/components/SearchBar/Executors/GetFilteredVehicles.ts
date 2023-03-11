@@ -4,9 +4,8 @@ export default class GetFilteredVehicles {
 
     constructor(private searchValue: string) { }
 
-    async execute() {
-        const response = await instance.get(`find?q=${this.searchValue}`)
-        return response
+     execute() {
+        return instance.get(`find?q=${this.searchValue}`)
     }
 
 }

@@ -1,0 +1,13 @@
+.autocomplete {
+    position: absolute;
+    background: #fff;
+    margin: 5px 0;
+    width: 100%;
+
+    .vehicle {
+        padding: 10px;
+        span {
+            margin: 0 7px;
+        }
+    }
+}

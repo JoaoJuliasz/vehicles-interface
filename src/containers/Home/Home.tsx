@@ -8,9 +8,10 @@ import VehiclesContainer from '../VehiclesContainer/VehiclesContainer';
 const Home = () => {
 
     const [vehicles, setVehicles] = useState<Vehicle[]>([])
+    const [detailedVehicleId, setDetailedVehicleId] = useState("")
 
     return (
-        <VehiclesProvider value={{ vehicles, setVehicles }}>
+        <VehiclesProvider value={{ vehicles, setVehicles, detailedVehicleId, setDetailedVehicleId }}>
             <div>
                 <Navbar />
                 <div style={{ padding: '2em', maxWidth: '1000px', margin: '0 auto' }}>

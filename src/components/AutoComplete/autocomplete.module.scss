@@ -1,13 +1,32 @@
 .autocomplete {
     position: absolute;
     background: #fff;
-    margin: 5px 0;
-    width: 100%;
+    margin: 10px 5px 5px;
+    margin-right: 20px;
+    width: calc(100% - 10px);
+    min-height: 100px;
+    border-radius: 5px;
 
     .vehicle {
         padding: 10px;
         span {
             margin: 0 7px;
+            font-size: 17px;
+            color: #2f2e2e;
+        }
+
+        &:hover {
+            background: #f1f2f0;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            
+            &:first-of-type {
+                border-radius: 5px 5px 0 0;
+            }
+
+            // &:last-of-type {
+            //     border-radius: 0 0 5px 5px;
+            // }
         }
     }
 }

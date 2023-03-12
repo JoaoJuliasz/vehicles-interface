@@ -25,9 +25,11 @@ const VehiclesList = ({ changeDetailedVehicle }: Props) => {
     return (
         <div className={style.container}>
             <h4 className={style.title}>Vehicles List</h4>
-            {vehicles.map(vehicle =>
-                <VehicleItem key={vehicle._id} vehicle={vehicle} changeDetailedVehicle={changeDetailedVehicle} />
-            )}
+            <div className={style.list}>
+                {vehicles.map(vehicle =>
+                    <VehicleItem key={vehicle._id} vehicle={vehicle} changeDetailedVehicle={changeDetailedVehicle} />
+                )}
+            </div>
         </div>
     );
 };

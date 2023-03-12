@@ -10,9 +10,13 @@ type Props = {
 
 const VehicleItem = ({ vehicle, changeDetailedVehicle }: Props) => {
 
-    const { detailedVehicleId } = useVehiclesContext()
+    const { detailedVehicleId, setDetailedVehicleId } = useVehiclesContext()
 
     const getItemDetails = () => {
+        if(vehicle._id! === detailedVehicleId) {
+            setDetailedVehicleId("")
+            return 
+        }
         changeDetailedVehicle(vehicle._id!)
     }
 

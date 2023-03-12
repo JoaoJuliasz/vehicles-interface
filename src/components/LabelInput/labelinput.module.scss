@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 7px;
+
+    label {
+        bottom: -15px;
+        position: relative;
+        transition: all 0.25s ease 0s;
+        color: #a0a0a0;
+    }
+
+    input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #a0a0a0;
+        
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+    }
+
+    &.focused {
+        label {
+            bottom: 5px;
+            color: #5582a3;
+        }
+
+        input {
+            border-color:#5582a3;
+        }
+    }
+}

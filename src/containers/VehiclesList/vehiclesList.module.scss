@@ -8,4 +8,10 @@
         color: #676767;
         margin: 0 0 10px;
     }
+
+    .list {
+        overflow-y: scroll;
+        max-height: 600px;
+        margin: 20px 0;
+    }
 }

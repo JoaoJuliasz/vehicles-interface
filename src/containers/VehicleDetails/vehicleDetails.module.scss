@@ -2,9 +2,21 @@
     width: 50%;
     margin-top: 20px;
 
-    .title {
-        color: #676767;
-        margin: 0 0 10px;
+    .titleContainer {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 10px 10px;
+        
+        .title {
+            color: #676767;
+            margin: 0;
+        }
+
+        .close {
+            font-size: 18px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
     }
 
     .infos {

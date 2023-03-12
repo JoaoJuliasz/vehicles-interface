@@ -6,10 +6,11 @@ import GetVehicleDetails from './Executors/GetVehicleDetails';
 import style from './vehicleDetails.module.scss'
 
 const VehicleDetails = () => {
+
     const [vehicleDetails, setVehicleDetails] = useState({} as Vehicle)
     const [loading, setLoading] = useState<boolean>(false)
 
-    const { detailedVehicleId: vehicleId } = useVehiclesContext()
+    const { detailedVehicleId: vehicleId, setDetailedVehicleId } = useVehiclesContext()
 
     const getVehicleDetails = async () => {
         setLoading(true)
@@ -23,6 +24,10 @@ const VehicleDetails = () => {
         }
     }
 
+    const closeVehiclesDetails = () => {
+        setDetailedVehicleId('')
+    }
+
     useEffect(() => {
         getVehicleDetails()
     }, [vehicleId])
@@ -31,7 +36,10 @@ const VehicleDetails = () => {
         <div className={style.container}>
             {vehicleId ?
                 <>
-                    <h4 className={style.title}>Details</h4>
+                    <div className={style.titleContainer}>
+                        <h4 className={style.title}>Details</h4>
+                        <span onClick={closeVehiclesDetails} className={style.close}>&#8722;</span>
+                    </div>
                     {loading ? 'loading...'
                         :
                         <div className={style.infos}>

@@ -10,6 +10,8 @@
     &:hover,
     &.selected {
         background: #f1f2f0;
+        transition: all 0.25s ease;
+
     }
 
     .vehicleValues {

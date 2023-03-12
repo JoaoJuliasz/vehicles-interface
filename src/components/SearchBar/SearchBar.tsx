@@ -40,6 +40,12 @@ const SearchBar = () => {
         }
     }
 
+    const handleFocus = () => {
+        if (searchValue) {
+            filterVehiclesList()
+        }
+    }
+
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
             if (searchValue) {
@@ -55,11 +61,12 @@ const SearchBar = () => {
             <div>
                 <input className={styles.input} type="text"
                     onChange={handleChange}
+                    onFocus={handleFocus}
                     value={searchValue}
                     placeholder="SEARCH for a vehicle" />
             </div>
             {autoComplete.length > 0 ?
-                <AutoComplete autoComplete={autoComplete} handleClick={selectAutoCompleteItem} />
+                <AutoComplete autoComplete={autoComplete} setAutoComplete={setAutoComplete} handleClick={selectAutoCompleteItem} />
                 : null
             }
         </div>

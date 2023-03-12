@@ -2,8 +2,8 @@ export type Vehicle = {
     veiculo: string
     marca: string
     ano: number | string
-    descricao: string
-    vendido: boolean,
+    descricao?: string
+    vendido?: boolean,
     _id?: string,
 }
 

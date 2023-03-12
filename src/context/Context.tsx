@@ -7,6 +7,8 @@ type VehiclesContextType = {
     setVehicles: React.Dispatch<React.SetStateAction<Vehicle[]>>
     detailedVehicleId: string
     setDetailedVehicleId: React.Dispatch<React.SetStateAction<string>>
+    fetchDetail: boolean
+    setFetchDetail: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const VehiclesContext = createContext<VehiclesContextType | null>(null)

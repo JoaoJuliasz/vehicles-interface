@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, TextareaHTMLAttributes } from 'react';
 import { useFocus } from '../../hooks/useFocus';
 import { Vehicle } from '../../types/types';
 
@@ -9,18 +9,18 @@ type Props = {
     objType: keyof Vehicle
     value: string | number
     handleChange: (key: keyof Vehicle, value: string | boolean) => void
-}
+} & TextareaHTMLAttributes<HTMLTextAreaElement>
 
-const LabelTextArea = ({ title, objType, value, handleChange }: Props) => {
+const LabelTextArea = ({ title, objType, value, handleChange, ...rest }: Props) => {
 
     const { focused, handleBlur, handleFocus } = useFocus()
 
     return (
         <div className={`${style.container} ${focused || value ? style.focused : ''}`}>
-            <label htmlFor="">Description</label>
+            <label htmlFor={title}>{title}</label>
             <textarea rows={10} maxLength={1000}
-                onChange={e => handleChange(objType, e.target.value)}
-                onFocus={handleFocus} onBlur={handleBlur} name="" id="" />
+                onChange={e => handleChange(objType, e.target.value)} value={value}
+                onFocus={handleFocus} onBlur={handleBlur} name={title} {...rest} />
         </div>
     );
 };

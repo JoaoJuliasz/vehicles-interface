@@ -9,7 +9,9 @@ export const useVehiclesContext = () => {
         vehicles: context?.vehicles!,
         setVehicles: context?.setVehicles!,
         detailedVehicleId: context?.detailedVehicleId!,
-        setDetailedVehicleId: context?.setDetailedVehicleId!
+        setDetailedVehicleId: context?.setDetailedVehicleId!,
+        fetchDetail: context?.fetchDetail!,
+        setFetchDetail: context?.setFetchDetail!,
     }
 
 }

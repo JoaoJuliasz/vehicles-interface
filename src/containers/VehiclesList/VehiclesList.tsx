@@ -9,13 +9,16 @@ type Props = {
     changeDetailedVehicle: (vehicleId: string) => void
 }
 
+// const teste = () => new GetVehicles().execute()
 const VehiclesList = ({ changeDetailedVehicle }: Props) => {
+
+    // const { data: vehicles, error, isLoading, isError } = useQuery('vehicles', teste)
 
     const { vehicles, setVehicles } = useVehiclesContext()
 
     const getVehicles = async () => {
         const vehicles = await new GetVehicles().execute()
-        setVehicles(vehicles)
+        setVehicles(vehicles.data)
     }
 
     useEffect(() => {

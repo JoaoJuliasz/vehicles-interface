@@ -4,7 +4,7 @@ import style from './logo.module.scss'
 const Logo = () => {
     return (
         <div className={style.container}>
-            Logo
+            <span> &#128663;</span> Logo
         </div>
     );
 };

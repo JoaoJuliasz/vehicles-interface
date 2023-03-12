@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: start;
     margin: 7px;
+    width: 50%;
 
     label {
         bottom: -15px;
@@ -15,6 +16,7 @@
         outline: none;
         border: none;
         border-bottom: 1px solid #a0a0a0;
+        width: 100%;
         
         &::-webkit-inner-spin-button {
             -webkit-appearance: none;

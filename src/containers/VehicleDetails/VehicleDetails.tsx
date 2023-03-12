@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import Button from '../../components/Button/Button';
+import Modal from '../../components/Modal/Modal';
+import { useVehicle } from '../../hooks/useVehicle';
 import { useVehiclesContext } from '../../hooks/useVehiclesContext';
 import { Vehicle } from '../../types/types';
 import GetVehicleDetails from './Executors/GetVehicleDetails';
@@ -9,8 +12,10 @@ const VehicleDetails = () => {
 
     const [vehicleDetails, setVehicleDetails] = useState({} as Vehicle)
     const [loading, setLoading] = useState<boolean>(false)
+    const [show, setShow] = useState<boolean>(false)
 
-    const { detailedVehicleId: vehicleId, setDetailedVehicleId } = useVehiclesContext()
+    const { detailedVehicleId: vehicleId, setDetailedVehicleId, fetchDetail } = useVehiclesContext()
+    const { removeVehicle } = useVehicle(null, vehicleId)
 
     const getVehicleDetails = async () => {
         setLoading(true)
@@ -24,13 +29,20 @@ const VehicleDetails = () => {
         }
     }
 
+    const handleDelete = () => {
+        if(window.confirm('Are you sure you want to delete this vehicle?')){
+            removeVehicle()
+            closeVehiclesDetails()
+        }
+    }
+
     const closeVehiclesDetails = () => {
         setDetailedVehicleId('')
     }
 
     useEffect(() => {
         getVehicleDetails()
-    }, [vehicleId])
+    }, [vehicleId, fetchDetail])
 
     return (
         <div className={style.container}>
@@ -56,12 +68,23 @@ const VehicleDetails = () => {
                             </div>
                             <p className={style.description}>{vehicleDetails.descricao}</p>
                             <div className={style.edit}>
-                                <button className={style.btn}>&#9998; <span>Edit</span></button>
+                                <div style={{ display: 'flex' }}>
+                                    <Button onClick={() => setShow(true)}>
+                                        <>&#9998;</><span>Edit</span>
+                                    </Button>
+                                    <Button onClick={handleDelete}>
+                                        <>	&#128465;</><span>Delete</span>
+                                        {/* <>&#x1F5D1;</><span>Delete</span> */}
+                                    </Button>
+                                </div>
                                 <span className={style.tag}>&#x1f3f7;</span>
                             </div>
                         </div>
                     }
                 </> : null}
+
+            {show ? <Modal method="put" title="Update Vehicle" vehicleDetails={vehicleDetails} setShow={setShow} /> : null}
+
         </div>
     );
 };

@@ -32,7 +32,6 @@ const SearchBar = () => {
         try {
             const response = await new GetFilteredVehicles(searchValue).execute()
             if (!response.data.message) {
-                // context?.setVehicles(response.data)
                 setAutoComplete(prev => response.data)
             }
         } catch (error) {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
 import { VehiclesProvider } from '../../context/Context';
 import { Vehicle } from '../../types/types';
 import CreateVehicle from '../CreateVehicle/CreateVehicle';
@@ -9,10 +10,12 @@ const Home = () => {
 
     const [vehicles, setVehicles] = useState<Vehicle[]>([])
     const [detailedVehicleId, setDetailedVehicleId] = useState("")
+    const [fetchDetail, setFetchDetail] = useState<boolean>(false)
 
     return (
-        <VehiclesProvider value={{ vehicles, setVehicles, detailedVehicleId, setDetailedVehicleId }}>
+        <VehiclesProvider value={{ vehicles, setVehicles, detailedVehicleId, setDetailedVehicleId, fetchDetail, setFetchDetail }}>
             <div>
+            <ToastContainer position="top-right" pauseOnHover />
                 <Navbar />
                 <div style={{ padding: '2em', maxWidth: '1000px', margin: '0 auto' }}>
                     <CreateVehicle />

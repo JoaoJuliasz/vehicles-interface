@@ -30,7 +30,7 @@ const VehicleDetails = () => {
     }
 
     const handleDelete = () => {
-        if(window.confirm('Are you sure you want to delete this vehicle?')){
+        if (window.confirm('Are you sure you want to delete this vehicle?')) {
             removeVehicle()
             closeVehiclesDetails()
         }
@@ -41,7 +41,9 @@ const VehicleDetails = () => {
     }
 
     useEffect(() => {
-        getVehicleDetails()
+        if (vehicleId) {
+            getVehicleDetails()
+        }
     }, [vehicleId, fetchDetail])
 
     return (

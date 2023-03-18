@@ -1,7 +1,9 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useVehiclesContext } from '../../hooks/useVehiclesContext';
 import VehicleDetails from '../VehicleDetails/VehicleDetails';
 import VehiclesList from '../VehiclesList/VehiclesList';
+
+import styles from './vehiclesContainer.module.scss'
 
 const VehiclesContainer = () => {
     const { setDetailedVehicleId } = useVehiclesContext()
@@ -10,7 +12,7 @@ const VehiclesContainer = () => {
     }, [])
 
     return (
-        <div style={{ display: 'flex' }}>
+        <div className={styles.container}>
             <VehiclesList changeDetailedVehicle={changeDetailedVehicle} />
             <VehicleDetails />
         </div>

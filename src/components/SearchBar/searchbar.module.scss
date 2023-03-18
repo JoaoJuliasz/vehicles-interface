@@ -2,14 +2,19 @@
     background: rgb(42, 49, 56);
     width: 40%;
     position: relative;
+    
+    .searchContainer {
+        height: 100%;
 
-    .input {
-        width: -webkit-fill-available;
-        padding: 25px;
-        outline: none;
-        border: none;
-        background: none;
-        border-left: none;
-        color: #fff;
+        .input {
+            width: -webkit-fill-available;
+            height: 100%;
+            outline: none;
+            border: none;
+            background: none;
+            border-left: none;
+            color: #fff;
+        }
     }
+
 }

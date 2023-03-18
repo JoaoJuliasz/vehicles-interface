@@ -57,7 +57,7 @@ const SearchBar = () => {
 
     return (
         <div className={styles.container}>
-            <div>
+            <div className={styles.searchContainer}>
                 <input className={styles.input} type="text"
                     onChange={handleChange}
                     onFocus={handleFocus}

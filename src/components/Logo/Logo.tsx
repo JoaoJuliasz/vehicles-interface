@@ -1,10 +1,11 @@
 import style from './logo.module.scss'
+import logo from '../../assets/logo.jpeg'
 
 
 const Logo = () => {
     return (
         <div className={style.container}>
-            <span> &#128663;</span> Logo
+            <img src={logo} alt="logo" width={50}/>
         </div>
     );
 };

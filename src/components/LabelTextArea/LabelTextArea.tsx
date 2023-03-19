@@ -1,5 +1,5 @@
 import { memo, TextareaHTMLAttributes } from 'react';
-import { useFocus } from '../../hooks/useFocus';
+import { useFocus } from '../../hooks/useFocus/useFocus';
 import { Vehicle } from '../../types/types';
 
 import style from './labeltextarea.module.scss'

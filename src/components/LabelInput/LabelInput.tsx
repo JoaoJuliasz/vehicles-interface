@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, memo } from 'react';
-import { useFocus } from '../../hooks/useFocus';
+import { useFocus } from '../../hooks/useFocus/useFocus';
 import { Vehicle } from '../../types/types';
 
 import style from './labelinput.module.scss'

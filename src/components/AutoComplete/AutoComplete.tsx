@@ -36,7 +36,7 @@ const AutoComplete = ({ autoComplete, setAutoComplete, handleClick }: Props) => 
     return (
         <div className={styles.autocomplete} ref={node}>
             {autoComplete.map(vehicle =>
-                <div className={styles.vehicle} onClick={() => handleClick(vehicle._id!)}>
+                <div key={vehicle._id!} className={styles.vehicle} onClick={() => handleClick(vehicle._id!)}>
                     <span>{vehicle.veiculo}</span>
                     -
                     <span>{vehicle.marca}</span>

@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { VehiclesProvider } from '../../context/Context';
 import { Vehicle } from '../../types/types';
 import CreateVehicle from '../CreateVehicle/CreateVehicle';
 import Navbar from '../Navbar/Navbar';
 import VehiclesContainer from '../VehiclesContainer/VehiclesContainer';
+
+import styles from './home.module.scss'
 
 const Home = () => {
 
@@ -15,9 +17,9 @@ const Home = () => {
     return (
         <VehiclesProvider value={{ vehicles, setVehicles, detailedVehicleId, setDetailedVehicleId, fetchDetail, setFetchDetail }}>
             <div>
-            <ToastContainer position="top-right" pauseOnHover />
+                <ToastContainer position="top-right" pauseOnHover />
                 <Navbar />
-                <div style={{ padding: '2em', maxWidth: '1000px', margin: '0 auto' }}>
+                <div className={styles.vehicleContainer}>
                     <CreateVehicle />
                     <VehiclesContainer />
                 </div>

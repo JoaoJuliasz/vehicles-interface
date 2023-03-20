@@ -65,7 +65,7 @@ const Modal = ({ title, method, vehicleDetails, setShow }: Props) => {
                     </div>
                     <div className={styles.modalActions}>
                         <div className={styles.actionsContainer}>
-                            <Button onClick={handleUpdateVehicles}>
+                            <Button onClick={handleUpdateVehicles} disabled={!(vehicle.veiculo && vehicle.marca && vehicle.ano)}>
                                 <p style={{ margin: '0 auto' }}>{loading ? 'Loading...' : 'Add'}</p>
                             </Button>
                             <Button onClick={() => setShow(false)}

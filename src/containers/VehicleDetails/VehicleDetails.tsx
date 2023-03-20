@@ -76,7 +76,6 @@ const VehicleDetails = () => {
                                     </Button>
                                     <Button onClick={handleDelete}>
                                         <>	&#128465;</><span>Delete</span>
-                                        {/* <>&#x1F5D1;</><span>Delete</span> */}
                                     </Button>
                                 </div>
                                 <span className={style.tag}>&#x1f3f7;</span>

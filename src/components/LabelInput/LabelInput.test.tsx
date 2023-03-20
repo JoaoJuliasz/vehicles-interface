@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { render, screen, userEvent } from '../../../test-utils'
+import { fireEvent, render, screen } from '../../../test-utils'
 import LabelInput from './LabelInput'
 
 describe('LabelInput', () => {
@@ -11,12 +11,12 @@ describe('LabelInput', () => {
         expect(title).toBeInTheDocument()
     })
 
-    it('handleChange should be called', async () => {
-        userEvent.setup()
+    it('handleChange should be called', () => {
         const handleChange = vi.fn()
         render(<LabelInput handleChange={handleChange} objType="veiculo" title="Vehicle" value="Renegade" />)
         const labelInput: HTMLInputElement = screen.getByRole('textbox')
-        await userEvent.type(labelInput, 'Compass')
+        fireEvent.change(labelInput, { target: { value: "This is Chevrolet's new car" } })
+        expect(handleChange).toBeCalled()
         expect(handleChange).toBeCalled()
     })
 })
